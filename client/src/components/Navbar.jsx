@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Left = styled.div`
   flex: 1;
   display: flex;
-  align-item: center;
+  align-items: center;
 `;
 const Language = styled.span`
   font-size: 14px;
