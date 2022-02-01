@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchIcon from "@mui/icons-material/Search";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 
@@ -58,7 +58,7 @@ export const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
+            <SearchOutlinedIcon style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
