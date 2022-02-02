@@ -1,10 +1,10 @@
 import { Home } from "./pages/Home";
 import { Product } from "./pages/Product";
 import { ProductList } from "./pages/ProductList";
-import { Register } from "./pages/Register";
+import { Signup } from "./pages/Signup";
 
 function App() {
-  return <Register />;
+  return <Signup />;
 }
 
 export default App;

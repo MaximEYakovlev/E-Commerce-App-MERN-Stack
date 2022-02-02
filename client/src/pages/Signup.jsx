@@ -46,7 +46,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Register = () => {
+export const Signup = () => {
   return (
     <Container>
       <Wrapper>
