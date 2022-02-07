@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
+const productRoute = require("./routes/product");
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
+app.use("/products", productRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
