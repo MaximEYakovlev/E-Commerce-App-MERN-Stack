@@ -15,7 +15,15 @@ export const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  useEffect(() => {}, [cat]);
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/products");
+        console.log(response);
+      } catch (error) {}
+    };
+    getProducts();
+  }, [cat]);
 
   return (
     <Container>
