@@ -7,7 +7,6 @@ import { Footer } from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { red } from "@mui/material/colors";
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -38,6 +37,7 @@ export const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
 
   const handleFilters = (event) => {
     const value = event.target.value;
@@ -75,14 +75,14 @@ export const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
-          <Select>
-            <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+          <Select onChange={(event) => setSort(event.target.value)}>
+            <Option value="newest">Newest</Option>
+            <Option value="asc">Price (asc)</Option>
+            <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products />
+      <Products cat={cat} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>
