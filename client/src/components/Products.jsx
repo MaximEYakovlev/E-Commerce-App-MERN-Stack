@@ -42,7 +42,7 @@ export const Products = ({ cat, filters, sort }) => {
 
   return (
     <Container>
-      {popularProducts.map((item) => (
+      {filteredProducts.map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>
