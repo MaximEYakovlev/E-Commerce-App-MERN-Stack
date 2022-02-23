@@ -2,9 +2,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Info = styled.div`
   opacity: 0;
@@ -63,17 +61,6 @@ const Icon = styled.div`
 `;
 
 export const Product = ({ item }) => {
-  const location = useLocation();
-  const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState({});
-
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-      } catch {}
-    };
-  }, [id]);
-
   return (
     <Container>
       <Circle />
