@@ -9,6 +9,7 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
+import axios from "axios";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -127,6 +128,10 @@ export const Product = () => {
     }
   };
 
+  const handleClick = () => {
+    axios.post;
+  };
+
   return (
     <Container>
       <Navbar />
@@ -161,7 +166,7 @@ export const Product = () => {
               <Amount>{quantity}</Amount>
               <AddOutlinedIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
