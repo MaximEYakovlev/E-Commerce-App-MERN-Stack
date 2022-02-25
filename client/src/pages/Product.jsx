@@ -128,9 +128,7 @@ export const Product = () => {
     }
   };
 
-  const handleClick = () => {
-    axios.post;
-  };
+  const handleClick = () => {};
 
   return (
     <Container>
