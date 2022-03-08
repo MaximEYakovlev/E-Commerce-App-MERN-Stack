@@ -10,7 +10,7 @@ export const FeaturedInfo = () => {
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,415</span>
           <span className="featuredMoneyRate">
-            -11.4 <ArrowDownwardIcon />
+            -11.4 <ArrowDownwardIcon className="featuredIcon negative" />
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
@@ -20,7 +20,7 @@ export const FeaturedInfo = () => {
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$4,415</span>
           <span className="featuredMoneyRate">
-            -1.4 <ArrowDownwardIcon />
+            -1.4 <ArrowDownwardIcon className="featuredIcon negative" />
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
@@ -30,7 +30,7 @@ export const FeaturedInfo = () => {
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">$2,225</span>
           <span className="featuredMoneyRate">
-            +2.4 <ArrowUpwardIcon />
+            +2.4 <ArrowUpwardIcon className="featuredIcon" />
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
