@@ -70,7 +70,7 @@ export const Product = () => {
                 alt=""
               />
               <label for="file">
-                <PublishIcon />
+                <PublishIcon className="productIcon" />
               </label>
               <input type="file" id="file" style={{ display: "none" }} />
             </div>
