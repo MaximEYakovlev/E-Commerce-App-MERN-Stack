@@ -20,10 +20,12 @@ export const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <LineStyleIcon className="sidebarIcon" />
-              Home
-            </li>
+            <Link to="/" className="link">
+              <li className="sidebarListItem active">
+                <LineStyleIcon className="sidebarIcon" />
+                Home
+              </li>
+            </Link>
             <li className="sidebarListItem">
               <TimelineIcon className="sidebarIcon" />
               Analytics
