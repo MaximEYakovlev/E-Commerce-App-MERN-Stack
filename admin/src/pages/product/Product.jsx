@@ -1,10 +1,18 @@
 import "./product.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Chart } from "../../components/chart/Chart";
 import { productData } from "../../dummyData.js";
 import PublishIcon from "@mui/icons-material/Publish";
+import { useSelector } from "react-redux";
 
 export const Product = () => {
+  const location = useLocation();
+  const productId = location.pathname.split("/")[2];
+
+  const product = useSelector((state) =>
+    state.product.products.find((product) => product._id === productId)
+  );
+
   return (
     <div className="product">
       <div className="productTitleContainer">
@@ -19,29 +27,21 @@ export const Product = () => {
         </div>
         <div className="productTopRight">
           <div className="productInfoTop">
-            <img
-              className="productInfoImg"
-              src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
-            <span className="productName">Apple Airpods</span>
+            <img className="productInfoImg" src={product.img} alt="" />
+            <span className="productName">{product.title}</span>
           </div>
           <div className="productInfoBottom">
             <div className="productInfoItem">
               <span className="productInfoKey">id:</span>
-              <span className="productInfoValue">123</span>
+              <span className="productInfoValue">{product._id}</span>
             </div>
             <div className="productInfoItem">
               <span className="productInfoKey">sales:</span>
               <span className="productInfoValue">5123</span>
             </div>
             <div className="productInfoItem">
-              <span className="productInfoKey">active:</span>
-              <span className="productInfoValue">yes</span>
-            </div>
-            <div className="productInfoItem">
               <span className="productInfoKey">in stock:</span>
-              <span className="productInfoValue">no</span>
+              <span className="productInfoValue">{product.inStock}</span>
             </div>
           </div>
         </div>
