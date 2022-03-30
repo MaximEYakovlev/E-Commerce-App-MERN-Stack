@@ -50,25 +50,20 @@ export const Product = () => {
         <form className="productForm">
           <div className="productFormLeft">
             <label>Product Name</label>
-            <input type="text" placeholder="Apple Airpod" />
+            <input type="text" placeholder={product.title} />
+            <label>Product Description</label>
+            <input type="text" placeholder={product.desc} />
+            <label>Price</label>
+            <input type="text" placeholder={product.price} />
             <label>In Stock</label>
             <select name="inStock" id="inStock">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>Active</label>
-            <select name="active" id="active">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
             </select>
           </div>
           <div className="productFormRight">
             <div className="productUpload">
-              <img
-                className="productUploadImg"
-                src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt=""
-              />
+              <img className="productUploadImg" src={product.img} alt="" />
               <label for="file">
                 <PublishIcon className="productIcon" />
               </label>
