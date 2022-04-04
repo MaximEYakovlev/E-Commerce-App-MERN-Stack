@@ -6,6 +6,16 @@ export const NewProduct = () => {
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
 
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+
+  const handleCat = (e) => {
+    setCat(e.target.value.split(","));
+  };
+
   return (
     <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
@@ -21,6 +31,7 @@ export const NewProduct = () => {
         <div className="addProductItem">
           <label>Title</label>
           <input
+            name="title"
             type="text"
             placeholder="Apple Airpods"
             onChange={handleChange}
@@ -29,6 +40,7 @@ export const NewProduct = () => {
         <div className="addProductItem">
           <label>Description</label>
           <input
+            name="desc"
             type="text"
             placeholder="description..."
             onChange={handleChange}
@@ -36,7 +48,12 @@ export const NewProduct = () => {
         </div>
         <div className="addProductItem">
           <label>Price</label>
-          <input type="text" placeholder="100" onChange={handleChange} />
+          <input
+            name="price"
+            type="number"
+            placeholder="100"
+            onChange={handleChange}
+          />
         </div>
         <div className="addProductItem">
           <label>Categories</label>
@@ -44,7 +61,7 @@ export const NewProduct = () => {
         </div>
         <div className="addProductItem">
           <label>Stock</label>
-          <select onChange={handleChange}>
+          <select name="inStock" onChange={handleChange}>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>
